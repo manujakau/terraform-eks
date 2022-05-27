@@ -74,7 +74,7 @@ resource "aws_subnet" "eks_private_subnet_b" {
   availability_zone = data.aws_availability_zones.available.names[1]
 
   tags = {
-    Name                              = "eks_private_a"
+    Name                              = "eks_private_b"
     Tier                              = "Private"
     "kubernetes.io/cluster/eks"       = "shared"
     "kubernetes.io/role/internal-elb" = 1
