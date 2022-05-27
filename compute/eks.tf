@@ -1,4 +1,4 @@
-resource "aws_iam_role" "eks_cluster" {
+resource "aws_iam_role" "eks_cluster_iam_role" {
   name = "eks-cluster-custom"
   assume_role_policy = <<POLICY
 {
@@ -18,12 +18,12 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role = aws_iam_role.eks_cluster.name
+  role = aws_iam_role.eks_cluster_iam_role.name
 }
 
 resource "aws_eks_cluster" "eks" {
   name = "eks"
-  role_arn = aws_iam_role.eks_cluster.arn
+  role_arn = aws_iam_role.eks_cluster_iam_role.arn
   version = "1.21"
 
   vpc_config {
