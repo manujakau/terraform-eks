@@ -57,7 +57,9 @@ resource "aws_eks_node_group" "eks_nodes_general" {
   disk_size = 20
   force_update_version = false
 
-  instance_types = ["t3.small"]
+  instance_types = [
+      "t3.small"
+    ]
 
   labels = {
     role = "eks-nodes-general"
