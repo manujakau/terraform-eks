@@ -14,5 +14,6 @@ eks nodes capacity_type : ON_DEMAND, SPOT
 ```
 
 ```
+config credentials to ~/.kube/config
 aws eks --region eu-north-1 update-kubeconfig --name eks --profile default
 ```
