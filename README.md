@@ -17,3 +17,7 @@ eks nodes capacity_type : ON_DEMAND, SPOT
 config credentials to ~/.kube/config
 aws eks --region eu-north-1 update-kubeconfig --name eks --profile default
 ```
+
+```
+kubectl apply -f /home/<user>/terraform-eks/k8s-build-spec/app.yaml
+```
